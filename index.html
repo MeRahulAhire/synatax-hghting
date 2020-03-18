@@ -1,0 +1,76 @@
+<body> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/night-owl.min.css">
+
+<div class="code-container" style="margin: auto; width: 700px;">
+    <pre><code data-language="plaintext">
+        import React, { Component } from 'react'
+        import './reg-style/Credentail.css'
+        import 'react-phone-number-input/style.css'
+        import PhoneInput from 'react-phone-number-input'
+        export class Credential extends Component {
+    continue = e => {
+        e.preventDefault();
+        this.props.nextStep();
+      };
+    
+      back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+      };
+    render() {
+          const { values, handleChange } = this.props;
+
+        return (
+            
+                    &ltdiv>
+                        &ltHelmet>
+                        &ltbody className="form-bg-col">&lt/body>
+                      &lt/Helmet>
+                      
+                      
+                      &ltdiv className="login">
+                          &ltdiv className="reg-container">
+                          &ltbutton onClick={this.back} className="col-form-prev">&lti class="fa fa-chevron-left">&lt/i>&lt/button>
+                          &ltdiv className="user-detail email">
+                            Email:
+                            &ltinput onChange={handleChange('Email')} defaultValue={values.Email}  type="email" placeholder="Enter your Email"/>
+                        &lt/div>
+                        &ltdiv  className="user-detail ">
+                            Phone:
+                            &ltPhoneInput
+                            onChange={handleChange('Phone')} defaultValue={values.Phone}
+                            displayInitialValueAsLocalNumber
+                              placeholder="Enter phone number"
+                              defaultCountry="IN"
+                              />
+                            
+                        &lt/div>
+                        &ltdiv className="user-detail username">
+                            Username:
+                            &ltinput onChange={handleChange('Username')} defaultValue={values.Username} type="text" placeholder="Select your unique Username" />
+                        &lt/div>
+                        &ltdiv className="user-detail password">
+                            Password:
+                            &ltinput onChange={handleChange('Password')} defaultValue={values.Password} type="password" placeholder="Choose your Password" />
+                        &lt/div>
+                                          
+                        &ltbutton onClick={this.continue} className="col-form-next">&lti class="fa fa-chevron-right">&lt/i>&lt/button>
+                        
+                       
+                        &lt/div>
+                          
+                      &lt/div>
+                  &lt/div>
+              
+        )
+    }
+}
+
+export default Credential
+
+    </code></pre>
+
+</div></body>
